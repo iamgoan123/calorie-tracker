@@ -1,0 +1,107 @@
+# 🍛 My Food Journal — Personal Calorie Tracker
+
+A mobile-first calorie tracker built for Indian food lovers. Tracks calories, protein, carbs, fat, and fiber with 100+ built-in vegetarian Indian foods. Uses AI to look up anything not in the database.
+
+![Pure Veg](https://img.shields.io/badge/🌿-Pure_Veg-green)
+![Mobile First](https://img.shields.io/badge/📱-Mobile_First-orange)
+
+## Features
+
+- **100+ Indian foods** with built-in nutrition data — no API call needed
+- **AI-powered lookup** for anything not in the database (uses Grok API)
+- **Meal sections** — Breakfast, Lunch, Dinner, Snacks with auto-detection by time
+- **Quantity picker** — log 3× Roti, 4× Parle-G, 2× Budweiser easily
+- **Smart portions** — Small/Regular/Large for bowls & plates, fixed units for bottles & biscuits
+- **Meal planner** — AI generates a full day plan within your calorie budget
+- **Customizable goal** — 1200 to 2500+ kcal presets or custom
+- **History** — view past days' logs
+- **Search aliases** — type "poha" to find "Kanda Batata Poha", "amti" for "Toor Dal"
+- **Pure vegetarian** — no eggs, no meat, no fish anywhere
+
+## Food Categories
+
+| Category | Examples |
+|----------|---------|
+| 🏠 Home | Roti, Paratha, Bhakri, Sabzis, Poha, Upma, Pithla Bhakri |
+| 🥣 Dals | Toor, Moong, Masoor, Chana, Urad, Dal Fry, Dal Makhani, Rajma, Chole |
+| 🥗 Salads | Chana Salad, Sprouts, Khamang Kakdi, Koshimbir |
+| 🌿 South Indian | Dosa, Idli, Uttapam, Medu Vada |
+| 🍛 Main | Biryani, Pav Bhaji, Misal Pav, Vada Pav |
+| 🍪 Snacks | Parle-G, Marie, Bourbon, Samosa, Namkeen |
+| ☕ Cafe | Cappuccino, Pasta, Pizza, Brownie, Sandwich |
+| 🥤 Drinks | Chai, Maaza, Sprite, Lassi, Buttermilk |
+| 🍺 Alcohol | Budweiser, Kingfisher, Whisky, Vodka, Wine |
+| 🍌 Fruits | Apple, Banana, Mango, Guava, Chickoo |
+
+## Deploy to Vercel (5 minutes)
+
+### Step 1: Push to GitHub
+
+```bash
+# Clone or create a new repo
+git init
+git add .
+git commit -m "Initial commit - calorie tracker"
+git remote add origin https://github.com/YOUR_USERNAME/calorie-tracker.git
+git push -u origin main
+```
+
+### Step 2: Deploy on Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click **"Add New Project"**
+3. Import your `calorie-tracker` repo
+4. Framework Preset will auto-detect **Vite** — leave defaults
+5. Click **Deploy** — wait ~1 minute
+
+### Step 3: Add Your Grok API Key
+
+1. In your Vercel project, go to **Settings → Environment Variables**
+2. Add:
+   - **Name:** `XAI_API_KEY`
+   - **Value:** Your Grok API key (starts with `xai-your-key-here`)
+3. Click **Save**
+4. Go to **Deployments → Redeploy** (click the 3-dot menu on the latest deployment)
+
+### Step 4: Use It!
+
+- Open the Vercel URL on your phone
+- Tap **Share → Add to Home Screen** (iOS) or **Install App** (Android) for app-like experience
+- Share the URL with friends — each person's data stays in their own browser
+
+## How It Works
+
+- **Built-in foods** (100+): Instant logging, no API call, works offline
+- **AI lookup**: For unlisted foods, calls Grok via `/api/lookup` serverless function
+- **Meal planner**: AI generates a day plan respecting your calorie budget and veg diet
+- **Storage**: All data saved in browser `localStorage` — private to each device
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Create a `.env.local` file for local AI features:
+```
+XAI_API_KEY=sk-ant-your-key-here
+```
+
+Open `http://localhost:5173` in your browser.
+
+## Tech Stack
+
+- **React 18** + **Vite** — fast build, instant HMR
+- **Vercel** — hosting + serverless functions
+- **Grok API** — AI food lookup + meal planning
+- **localStorage** — client-side data persistence
+- No database needed, no auth needed
+
+## For Your Friends
+
+Just share the Vercel URL! Each person's data is stored in their own browser's localStorage, so everyone has their own private food journal. No signup, no accounts needed.
+
+---
+
+Built with 🍛 for daily Indian food tracking
