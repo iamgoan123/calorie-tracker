@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Analytics } from '@vercel/analytics/react';
 
 // ── localStorage helpers ──
 const store = {
@@ -462,6 +463,7 @@ export default function App() {
 
       {/* ══ FAB ══ */}
       {(view==="home"||view==="plan")&&(<button onClick={()=>{setMealIdx(guessMeal());setView("add");setTimeout(()=>inputRef.current?.focus(),200);}} style={{position:"fixed",bottom:22,left:"50%",transform:"translateX(-50%)",width:58,height:58,borderRadius:"50%",border:"none",background:`linear-gradient(135deg,${accent},#d4691a)`,color:"#fff",fontSize:28,fontWeight:300,cursor:"pointer",boxShadow:"0 6px 24px rgba(224,122,47,0.45)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:100}}>+</button>)}
+      <Analytics />
     </div>
   );
 }
